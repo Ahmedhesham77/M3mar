@@ -12,10 +12,10 @@ import { IoIosArrowForward } from "react-icons/io";
 export default function Navbar() {
     const pathname = usePathname();
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    const [openDropdown, setOpenDropdown] = useState(null);
-    const navRef = useRef(null);
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const navRef = useRef<HTMLDivElement>(null);
 
-    function toggleDropdown(menu) {
+    function toggleDropdown(menu: string) {
         if (openDropdown === menu) {
             setOpenDropdown(null);
         } else {
@@ -24,8 +24,8 @@ export default function Navbar() {
     }
 
     useEffect(() => {
-        function handleClickOutside(event) {
-            if (openDropdown && navRef.current && !navRef.current.contains(event.target)) {
+        function handleClickOutside(event: MouseEvent) {
+            if (openDropdown && navRef.current && !navRef.current.contains(event.target as Node)) {
                 setOpenDropdown(null);
             }
         }

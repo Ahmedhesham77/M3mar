@@ -10,7 +10,7 @@ import { PiHandbag } from "react-icons/pi";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import SwiperCore from "swiper";
 const Agents = () => {
-    const swiperRef = useRef<SwiperCore>();
+    const swiperRef = useRef<SwiperCore | null>(null);
     return (
         <div className='flex flex-col items-center justify-center w-full h-full px-4 sm:px-16  py-8 '>
             <div className='flex flex-row-reverse justify-between items-center w-full mb-8'>
