@@ -25,7 +25,7 @@ import './globals.css';
 
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
-  const swiperRef = useRef<SwiperCore>();
+  const swiperRef = useRef<SwiperCore | null>(null);
 
   useEffect(() => {
     // تأخير زمني لمحاكاة التحميل - يمكنك تعديله حسب حاجتك

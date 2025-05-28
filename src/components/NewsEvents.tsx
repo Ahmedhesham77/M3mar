@@ -12,7 +12,7 @@ import "./style.css";
 
 
 const NewsEvents = () => {
-    const swiperRef = useRef<SwiperCore>();
+    const swiperRef = useRef<SwiperCore | null>(null);
     return (
         <section className='py-12 px-4 md:px-8 bg-white'>
             <div className='flex flex-row-reverse  items-baseline justify-between   '>
