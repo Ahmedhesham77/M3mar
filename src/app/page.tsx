@@ -8,7 +8,9 @@ import NewProject from "../components/NewProject";
 import Navbar from "../components/NavBar";
 import CustomerOpinions from "../components/CustomerOpinions";
 import Agents from "../components/Agents";
-import NewsEvents from "@/components/NewsEvents";
+import NewsEvents from "../components/NewsEvents";
+import Footer from "../components/Footer";
+
 import { CiSearch } from "react-icons/ci";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FaLongArrowAltRight } from "react-icons/fa";
@@ -296,6 +298,7 @@ export default function HomePage() {
 
         <Agents />
         <NewsEvents />
+        <Footer />
 
       </main>
 
