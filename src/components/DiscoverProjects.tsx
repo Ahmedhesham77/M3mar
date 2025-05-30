@@ -8,7 +8,7 @@ import { FaLongArrowAltRight } from 'react-icons/fa';
 
 const DiscoverProjects = () => {
     return (
-        <div className='flex flex-col items-center justify-center w-full h-full px-4 sm:px-8 md:px-16  py-8'>
+        <div className='flex flex-col items-center justify-center w-full h-full px-4 sm:px-8 md:px-16  py-8 bg-white'>
             <div className='flex flex-col justify-between items-center gap-2 w-full mb-8 px-4 sm:px-22'>
                 <h1 className='text-[20px] sm:text-xl font-bold '>
                     استكشف مشاريع اخري

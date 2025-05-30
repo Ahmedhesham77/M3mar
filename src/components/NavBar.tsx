@@ -208,8 +208,8 @@ export default function Navbar() {
 
                         <div className="flex flex-row-reverse items-center gap-4">
                             <div className="flex flex-row-reverse justify-between gap-2 items-center">
-                                <Image width={20} height={20} src="/translate.svg" alt="" />
-                                <p className="text-[10px] md:text-[12px] lg:text-sm ">تغيير اللغة </p>
+                                <Image width={20} height={20} color="black" src="/translate.svg" alt="" />
+                                <p className="text-[10px] md:text-[12px] lg:text-sm text-[#333333] ">تغيير اللغة </p>
                             </div>
                             <FaRegBell size={18} />
                         </div>

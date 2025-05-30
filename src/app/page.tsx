@@ -293,7 +293,7 @@ export default function HomePage() {
 
         <CustomerOpinions />
         { /* job Section */}
-        <section>
+        <section className="w-full bg-white ">
           <div
             className="flex flex-row-reverse w-full justify-between  items-end mt-2 bg-cover bg-center h-[30vh] sm:h-[35vh] md:h-[40vh] relative"
             style={{ backgroundImage: "url('/jobSectionBg.svg')" }}

@@ -11,7 +11,7 @@ import SwiperCore from "swiper";
 const CustomerOpinions = () => {
     const swiperRef = useRef<SwiperCore | null>(null);
     return (
-        <div className='flex flex-col items-center justify-center w-full h-full px-4 sm:px-22  py-8 '>
+        <div className='flex flex-col items-center justify-center w-full h-full bg-white px-4 sm:px-22  py-8 '>
             <div className='flex flex-row-reverse justify-between items-center w-full mb-8'>
                 <div className='flex-col gap-1'>
                     <h2 className='text-md sm:text-xl font-bold text-right'>آراء العملاء</h2>
