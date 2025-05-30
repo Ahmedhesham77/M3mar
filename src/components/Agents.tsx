@@ -12,7 +12,7 @@ import SwiperCore from "swiper";
 const Agents = () => {
     const swiperRef = useRef<SwiperCore | null>(null);
     return (
-        <div className='flex flex-col items-center justify-center w-full h-full px-4 sm:px-16  py-8 '>
+        <div className='flex flex-col items-center justify-center w-full h-full px-4 bg-white sm:px-16  py-8 '>
             <div className='flex flex-row-reverse justify-between items-center w-full mb-8'>
                 <div className='flex-col gap-1'>
                     <h2 className='text-md sm:text-xl font-bold text-right'> قابل وكلائنا</h2>
