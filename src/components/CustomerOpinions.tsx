@@ -122,7 +122,7 @@ const CustomerOpinions = () => {
 
             </Swiper>
 
-            <div className="flex flex-row-reverse gap-3 mt-4 self-center md:self-end ">
+            <div className="flex flex-row-reverse gap-3 mt-4 self-center md:self-end bg-white ">
                 <button onClick={() => swiperRef.current?.slideNext()} className='rounded-full bg-[#E37C35] p-1 text-[16px] sm:text-[20px] text-white transition-all hover:bg-white hover:text-[#E37c35] duration-300'><FiArrowRight /></button>
                 <button onClick={() => swiperRef.current?.slidePrev()} className='rounded-full bg-[#E37C35] p-1 text-[16px] sm:text-[20px] text-white transition-all hover:bg-white hover:text-[#E37c35] duration-300'><FiArrowLeft /></button>
             </div>
