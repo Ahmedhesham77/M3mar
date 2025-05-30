@@ -28,6 +28,20 @@ import './globals.css';
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
   const swiperRef = useRef<SwiperCore | null>(null);
+  const projectUnits = [
+    { id: 1, title: "مشروع الاندلس", date: "12 نوفمبر 2025", location: " القاهرة الجديدة" },
+    { id: 2, title: "مشروع النرجس", date: "15 ديسمبر 2025", location: "الجيزة" },
+    { id: 3, title: "مشروع المعادي", date: "1 يناير 2026", location: "المعادي" },
+    { id: 4, title: "مشروع الاندلس", date: "12 نوفمبر 2025", location: "القاهرة" },
+    { id: 5, title: "مشروع النرجس", date: "15 ديسمبر 2025", location: "الجيزة" },
+    { id: 6, title: "مشروع المعادي", date: "1 يناير 2026", location: "المعادي" },
+    { id: 7, title: "مشروع الاندلس", date: "12 نوفمبر 2025", location: "القاهرة" },
+    { id: 8, title: "مشروع النرجس", date: "15 ديسمبر 2025", location: "الجيزة" },
+    { id: 9, title: "مشروع المعادي", date: "1 يناير 2026", location: "المعادي" },
+    { id: 10, title: "مشروع الاندلس", date: "12 نوفمبر 2025", location: "القاهرة" },
+    { id: 11, title: "مشروع النرجس", date: "15 ديسمبر 2025", location: "الجيزة" },
+    { id: 12, title: "مشروع المعادي", date: "1 يناير 2026", location: "المعادي" },
+  ];
 
   useEffect(() => {
     // تأخير زمني لمحاكاة التحميل - يمكنك تعديله حسب حاجتك
@@ -271,7 +285,12 @@ export default function HomePage() {
             </SwiperSlide>
           </Swiper>
         </section>
-        <NewProject />
+        <NewProject unitsPerSlide={6} soldUnitIds={[]} directionOfHead="flex-row-reverse" units={projectUnits} button={
+          <button className='px-4 py-3 bg-white border-[#E37C35] border-[1px] text-[#E37C35] w-full text-[12px] md:text-[14px] rounded-2xl hover:bg-[#E37C35] hover:text-white transition duration-200'>
+            شاهد اكثر
+          </button>
+        } />
+
         <CustomerOpinions />
         { /* job Section */}
         <section>

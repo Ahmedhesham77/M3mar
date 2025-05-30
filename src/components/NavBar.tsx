@@ -154,12 +154,13 @@ export default function Navbar() {
                                 <IoIosArrowForward className={`transition-transform duration-300 ${openDropdown === "projects" ? "rotate-90" : ""}`}
                                     size={15}
                                     onClick={() => toggleDropdown("projects")} />
-                                <button
+                                <Link
+                                    href="/our-projects"
                                     onClick={() => toggleDropdown("projects")}
                                     className={`focus:outline-none text-[9px] sm:text-[10px] mt-0.5 sm:mt-0 md:text-[12px] lg:text-sm cursor-pointer transition-all duration-200 ${openDropdown === "projects"
                                         ? "text-[#383191] p-1 border-r-2 border-[#E37C35]" : ""}`}>
                                     مشاريعنا
-                                </button>
+                                </Link>
                             </li>
 
 
