@@ -298,7 +298,7 @@ export default function HomePage() {
             className="flex flex-row-reverse w-full justify-between  items-end mt-2 bg-cover bg-center h-[30vh] sm:h-[35vh] md:h-[40vh] relative"
             style={{ backgroundImage: "url('/jobSectionBg.svg')" }}
           >
-            <div className="box-job flex flex-col w-[100%] md:w-[50%] h-[100%] text-end justify-start md:justify-center self-end gap-4 px-2 py-2 bg-white ">
+            <div className="box-job flex flex-col w-[100%] md:w-[50%] h-[100%] text-end justify-start md:justify-center self-end gap-4 px-2 py-2  ">
               <h2 className="text-[12px] sm:text-xl md:text-2xl text-white font-bold font-">
                 أنضم إلينا كجزء من الفريق.. لتصبح جزء من معمار للتطوير العقاري
               </h2>
