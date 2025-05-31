@@ -1,6 +1,7 @@
 
 import React, { useRef } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation';
 import { CiCalendarDate } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -12,6 +13,15 @@ import "swiper/css";
 import "./style.css";
 
 const UnitOfProjec = () => {
+    const router = useRouter();
+    const goToProject = (e: React.MouseEvent<HTMLDivElement>) => {
+        const id = e.currentTarget.dataset.id;
+        const name = e.currentTarget.dataset.name;
+
+        if (id && name) {
+            router.push(`/unit-page/${id}?UnitName=${encodeURIComponent(name)}`)
+        }
+    };
     const swiperRef = useRef<SwiperCore | null>(null);
     return (
         <section className='py-12 px-4 md:px-8 bg-white w-full'>
@@ -33,7 +43,11 @@ const UnitOfProjec = () => {
                 <SwiperSlide>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 px-2 md:px-16 ">
 
-                        <div className='flex flex-col gap-1'>
+                        <div onClick={goToProject}
+                            className="flex flex-col gap-1 cursor-pointer"
+                            data-id="1"
+                            data-name="مشروع الاندلس"
+                        >
                             <div className="relative w-full h-48 md:h-78 rounded-xl overflow-hidden ">
                                 <Image src="/elandlus.svg" alt="مشروع" fill className="object-cover" />
                                 <div className="absolute rounded-2xl bottom-0 right-0 left-0 bg-black/40 h-fit  z-10 flex flex-col justify-start p-3 text-white">
@@ -68,7 +82,11 @@ const UnitOfProjec = () => {
 
 
 
-                        <div className='flex flex-col gap-1'>
+                        <div onClick={goToProject}
+                            className="flex flex-col gap-1 cursor-pointer"
+                            data-id="2"
+                            data-name="مشروع الاندلس"
+                        >
                             <div className="relative w-full h-48 md:h-78 rounded-xl overflow-hidden ">
                                 <Image src="/elandlus.svg" alt="مشروع" fill className="object-cover" />
                                 <div className="absolute rounded-2xl bottom-0 right-0 left-0 bg-black/40 h-fit  z-10 flex flex-col justify-start p-3 text-white">
@@ -102,7 +120,12 @@ const UnitOfProjec = () => {
                         </div>
 
                         {/* عنصر 3 */}
-                        <div className='flex flex-col gap-1'>
+                        <div onClick={goToProject}
+                            className="flex flex-col gap-1 cursor-pointer"
+                            data-id="3"
+                            data-name="مشروع الاندلس"
+
+                        >
                             <div className="relative w-full h-48 md:h-78 rounded-xl overflow-hidden ">
                                 <Image src="/elandlus.svg" alt="مشروع" fill className="object-cover" />
                                 <div className="absolute rounded-2xl bottom-0 right-0 left-0 bg-black/40 h-fit  z-10 flex flex-col justify-start p-3 text-white">
@@ -136,7 +159,12 @@ const UnitOfProjec = () => {
                         </div>
 
                         {/* عنصر 4 */}
-                        <div className='flex flex-col gap-1'>
+                        <div onClick={goToProject}
+                            className="flex flex-col gap-1 cursor-pointer"
+                            data-id="4"
+                            data-name="مشروع الاندلس"
+
+                        >
                             <div className="relative w-full h-48 md:h-78 rounded-xl overflow-hidden ">
                                 <Image src="/elandlus.svg" alt="مشروع" fill className="object-cover" />
                                 <div className="absolute rounded-2xl bottom-0 right-0 left-0 bg-black/40 h-fit  z-10 flex flex-col justify-start p-3 text-white">
@@ -170,7 +198,12 @@ const UnitOfProjec = () => {
                         </div>
 
                         {/* عنصر 5 */}
-                        <div className='flex flex-col gap-1'>
+                        <div onClick={goToProject}
+                            className="flex flex-col gap-1 cursor-pointer"
+                            data-id="5"
+                            data-name="مشروع الاندلس"
+
+                        >
                             <div className="relative w-full h-48 md:h-78 rounded-xl overflow-hidden ">
                                 <Image src="/elandlus.svg" alt="مشروع" fill className="object-cover" />
                                 <div className="absolute rounded-2xl bottom-0 right-0 left-0 bg-black/40 h-fit  z-10 flex flex-col justify-start p-3 text-white">
@@ -204,7 +237,12 @@ const UnitOfProjec = () => {
                         </div>
 
                         {/* عنصر 6 */}
-                        <div className='flex flex-col gap-1'>
+                        <div onClick={goToProject}
+                            className="flex flex-col gap-1 cursor-pointer"
+                            data-id="6"
+                            data-name="مشروع الاندلس"
+
+                        >
                             <div className="relative w-full h-48 md:h-78 rounded-xl overflow-hidden ">
                                 <Image src="/elandlus.svg" alt="مشروع" fill className="object-cover" />
                                 <div className="absolute rounded-2xl bottom-0 right-0 left-0 bg-black/40 h-fit  z-10 flex flex-col justify-start p-3 text-white">
@@ -242,7 +280,12 @@ const UnitOfProjec = () => {
                 <SwiperSlide>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 px-2 md:px-16 ">
                         {/* عنصر 1 */}
-                        <div className='flex flex-col gap-1'>
+                        <div onClick={goToProject}
+                            className="flex flex-col gap-1 cursor-pointer"
+                            data-id="7"
+                            data-name="مشروع الاندلس"
+
+                        >
                             <div className="relative w-full h-48 md:h-78 rounded-xl overflow-hidden ">
                                 <Image src="/elandlus.svg" alt="مشروع" fill className="object-cover" />
                                 <div className="absolute rounded-2xl bottom-0 right-0 left-0 bg-black/40 h-fit  z-10 flex flex-col justify-start p-3 text-white">
@@ -277,7 +320,12 @@ const UnitOfProjec = () => {
 
 
                         {/* عنصر 2 */}
-                        <div className='flex flex-col gap-1'>
+                        <div onClick={goToProject}
+                            className="flex flex-col gap-1 cursor-pointer"
+                            data-id="8"
+                            data-name="مشروع الاندلس"
+
+                        >
                             <div className="relative w-full h-48 md:h-78 rounded-xl overflow-hidden ">
                                 <Image src="/elandlus.svg" alt="مشروع" fill className="object-cover" />
                                 <div className="absolute rounded-2xl bottom-0 right-0 left-0 bg-black/40 h-fit  z-10 flex flex-col justify-start p-3 text-white">
@@ -311,7 +359,12 @@ const UnitOfProjec = () => {
                         </div>
 
                         {/* عنصر 3 */}
-                        <div className='flex flex-col gap-1'>
+                        <div onClick={goToProject}
+                            className="flex flex-col gap-1 cursor-pointer"
+                            data-id="9"
+                            data-name="مشروع الاندلس"
+
+                        >
                             <div className="relative w-full h-48 md:h-78 rounded-xl overflow-hidden ">
                                 <Image src="/elandlus.svg" alt="مشروع" fill className="object-cover" />
                                 <div className="absolute rounded-2xl bottom-0 right-0 left-0 bg-black/40 h-fit  z-10 flex flex-col justify-start p-3 text-white">
@@ -345,7 +398,12 @@ const UnitOfProjec = () => {
                         </div>
 
                         {/* عنصر 4 */}
-                        <div className='flex flex-col gap-1'>
+                        <div onClick={goToProject}
+                            className="flex flex-col gap-1 cursor-pointer"
+                            data-id="10"
+                            data-name="مشروع الاندلس"
+
+                        >
                             <div className="relative w-full h-48 md:h-78 rounded-xl overflow-hidden ">
                                 <Image src="/elandlus.svg" alt="مشروع" fill className="object-cover" />
                                 <div className="absolute rounded-2xl bottom-0 right-0 left-0 bg-black/40 h-fit  z-10 flex flex-col justify-start p-3 text-white">
@@ -379,7 +437,12 @@ const UnitOfProjec = () => {
                         </div>
 
                         {/* عنصر 5 */}
-                        <div className='flex flex-col gap-1'>
+                        <div onClick={goToProject}
+                            className="flex flex-col gap-1 cursor-pointer"
+                            data-id="11"
+                            data-name="مشروع الاندلس"
+
+                        >
                             <div className="relative w-full h-48 md:h-78 rounded-xl overflow-hidden ">
                                 <Image src="/elandlus.svg" alt="مشروع" fill className="object-cover" />
                                 <div className="absolute rounded-2xl bottom-0 right-0 left-0 bg-black/40 h-fit  z-10 flex flex-col justify-start p-3 text-white">
@@ -413,7 +476,12 @@ const UnitOfProjec = () => {
                         </div>
 
                         {/* عنصر 6 */}
-                        <div className='flex flex-col gap-1'>
+                        <div onClick={goToProject}
+                            className="flex flex-col gap-1 cursor-pointer"
+                            data-id="12"
+                            data-name="مشروع الاندلس"
+
+                        >
                             <div className="relative w-full h-48 md:h-78 rounded-xl overflow-hidden ">
                                 <Image src="/elandlus.svg" alt="مشروع" fill className="object-cover" />
                                 <div className="absolute rounded-2xl bottom-0 right-0 left-0 bg-black/40 h-fit  z-10 flex flex-col justify-start p-3 text-white">
