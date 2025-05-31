@@ -13,7 +13,7 @@ import DiscoverProjects from '@/components/DiscoverProjects';
 import ProjectPhases from '@/components/ProjectPhases';
 import ProjectFeatures from '@/components/ProjectFeatures';
 import UnitOfProjec from '@/components/UnitOfProjec';
-import { useParams } from 'next/navigation';
+
 import { useSearchParams } from 'next/navigation'
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { FaLongArrowAltRight } from "react-icons/fa";
@@ -33,7 +33,6 @@ import '../../globals.css';
 
 
 export default function AboutProject() {
-    const params = useParams();
 
     const searchParams = useSearchParams();
     // const title = searchParams.get("title");
