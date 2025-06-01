@@ -5,23 +5,11 @@ import Navbar from "../../components/NavBar"
 import Fotter from '../../components/Footer'
 import NewProject from '../../components/NewProject';
 import Agents from '@/components/Agents';
-
-
+import { projectUnits } from "../../data/newProjects";
+import { agents } from "../../data/agents";
+import { useRouter } from 'next/navigation';
 export default function OurProjects() {
-    const projectUnits = [
-        { id: 1, title: "مشروع الاندلس", date: "12 نوفمبر 2025", location: " القاهرة الجديدة" },
-        { id: 2, title: "مشروع النرجس", date: "15 ديسمبر 2025", location: "الجيزة" },
-        { id: 3, title: "مشروع المعادي", date: "1 يناير 2026", location: "المعادي" },
-        { id: 4, title: "مشروع الاندلس", date: "12 نوفمبر 2025", location: "القاهرة" },
-        { id: 5, title: "مشروع النرجس", date: "15 ديسمبر 2025", location: "الجيزة" },
-        { id: 6, title: "مشروع المعادي", date: "1 يناير 2026", location: "المعادي" },
-        { id: 7, title: "مشروع الاندلس", date: "12 نوفمبر 2025", location: "القاهرة" },
-        { id: 8, title: "مشروع النرجس", date: "15 ديسمبر 2025", location: "الجيزة" },
-        { id: 9, title: "مشروع المعادي", date: "1 يناير 2026", location: "المعادي" },
-        { id: 10, title: "مشروع الاندلس", date: "12 نوفمبر 2025", location: "القاهرة" },
-        { id: 11, title: "مشروع النرجس", date: "15 ديسمبر 2025", location: "الجيزة" },
-        { id: 12, title: "مشروع المعادي", date: "1 يناير 2026", location: "المعادي" },
-    ];
+    const router = useRouter();
 
     const [activeFilter, setActiveFilter] = useState<string | null>(null);
     return (
@@ -107,12 +95,14 @@ export default function OurProjects() {
                     </div>
                 </div>
             </section>
-            <NewProject
-                units={projectUnits}
-                unitsPerSlide={9}
-                soldUnitIds={[1, 5, 3, 7, 9]}
-                directionOfHead="flex-col items-end"
-                button={
+            <section className='py-2 px-4 md:px-8 bg-white'>
+                <div className={`flex flex-col items-end justify-between`}>
+                    <div className='flex flex-col items-end text-start bg-white rounded-lg'>
+                        <h2 className='text-lg sm:text-2xl font-bold mb-4'>احدث مشاريع معمار</h2>
+                        <p className='text-gray-600 mb-6 text-end text-[12px] sm:text-md'>
+                            تعمل شرکة معمار للتطویر العقاري وإدارة المشروعات ﻋﻠﯽ تقدیم أفضل خدمات المقاولات التشیید والبناء
+                        </p>
+                    </div>
                     <div className='flex flex-row-reverse gap-2 justify-end items-end mb-2'>
                         {["سكني", "تجاري", "طبي"].map((type) => (
                             <div
@@ -130,9 +120,25 @@ export default function OurProjects() {
                             </div>
                         ))}
                     </div>
-                }
-            />
-            <Agents />
+                </div>
+                <NewProject units={projectUnits} unitsPerSlide={9} />
+            </section>
+            <section className='py-2 px-4 md:px-8 bg-white'>
+                <div className='flex flex-row-reverse justify-between items-center w-full '>
+                    <div className='flex-col gap-1'>
+                        <h2 className='text-md sm:text-xl font-bold text-right'> قابل وكلائنا</h2>
+                        <p className='text-xs sm:text-md text-right'> تعمل شرکة معمار للتطویر العقاري وإدارة المشروعات ﻋﻠﯽ تقدیم أفضل خدمات المقاولات التشیید والبناء</p>
+
+                    </div>
+                    <button
+                        onClick={() => router.push('/meetOurAgents')}
+                        className='rounded-3xl border-1 border-[#E37C35] text-[#E37C35] text-[8px] w-1/3 sm:text-[12px] md:w-1/6 py-2 px-3 hover:text-white hover:bg-[#E37C35] transition-all duration-300'
+                    >
+                        قابل وكلاء أكثر
+                    </button>
+                </div>
+            </section>
+            <Agents agents={agents} unitsPerSlide={3} />
             <Fotter />
         </main >
     )

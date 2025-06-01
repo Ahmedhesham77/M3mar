@@ -151,14 +151,13 @@ export default function Navbar() {
                             </li>
 
                             <li className="cursor-pointer flex items-center gap-1">
-                                <IoIosArrowForward className={`transition-transform duration-300 ${openDropdown === "projects" ? "rotate-90" : ""}`}
-                                    size={15}
-                                    onClick={() => toggleDropdown("projects")} />
+
                                 <Link
                                     href="/our-projects"
-                                    onClick={() => toggleDropdown("projects")}
-                                    className={`focus:outline-none text-[9px] sm:text-[10px] mt-0.5 sm:mt-0 md:text-[12px] lg:text-sm cursor-pointer transition-all duration-200 ${openDropdown === "projects"
-                                        ? "text-[#383191] p-1 border-r-2 border-[#E37C35]" : ""}`}>
+
+                                    className={`transition-all text-[9px] sm:text-[10px] md:text-[12px] lg:text-sm p-1 duration-200 ${pathname === "/our-projects" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""
+                                        }`}
+                                >
                                     مشاريعنا
                                 </Link>
                             </li>
@@ -166,8 +165,8 @@ export default function Navbar() {
 
                             <li>
                                 <Link
-                                    href="/previous"
-                                    className={`transition-all text-[9px] sm:text-[10px] md:text-[12px] lg:text-sm duration-200 ${pathname === "/previous" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""
+                                    href="/previous-projects"
+                                    className={`transition-all text-[9px] sm:text-[10px] md:text-[12px] lg:text-sm duration-200 ${pathname === "/previous-projects" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""
                                         }`}
                                 >
                                     المشاريع السابقة
@@ -186,8 +185,8 @@ export default function Navbar() {
 
                             <li>
                                 <Link
-                                    href="/contact"
-                                    className={`transition-all text-[9px] sm:text-[10px] md:text-[12px] lg:text-sm  duration-200 ${pathname === "/contact" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""
+                                    href="/contactus"
+                                    className={`transition-all text-[9px] sm:text-[10px] md:text-[12px] lg:text-sm  duration-200 ${pathname === "/contactus" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""
                                         }`}
                                 >
                                     تواصل معانا
@@ -227,18 +226,17 @@ export default function Navbar() {
 
                         <ul className="flex flex-col gap-4 p-4 text-right text-gray-800 text-sm">
                             <li><Link className={`transition-all duration-200  ${pathname === "/" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""}`} href="/" onClick={() => setSidebarOpen(false)}>الرئيسية</Link></li>
-                            <li><Link className={`transition-all duration-200  ${pathname === "/jobs" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""}`} href="/previous" onClick={() => setSidebarOpen(false)}>المشاريع السابقة</Link></li>
-                            <li><Link className={`transition-all duration-200  ${pathname === "/jobs" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""}`} href="/news" onClick={() => setSidebarOpen(false)}>الاخبار</Link></li>
-                            <li><Link className={`transition-all duration-200  ${pathname === "/jobs" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""}`} href="/contact" onClick={() => setSidebarOpen(false)}>تواصل معانا</Link></li>
+                            <li><Link className={`transition-all duration-200  ${pathname === "/previous-projects" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""}`} href="/previous-projects" onClick={() => setSidebarOpen(false)}>المشاريع السابقة</Link></li>
+                            <li><Link className={`transition-all duration-200  ${pathname === "/news" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""}`} href="/news" onClick={() => setSidebarOpen(false)}>الاخبار</Link></li>
+                            <li><Link className={`transition-all duration-200  ${pathname === "/contactus" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""}`} href="/contactus" onClick={() => setSidebarOpen(false)}>تواصل معانا</Link></li>
                             <li><Link className={`transition-all duration-200  ${pathname === "/jobs" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""}`} href="/jobs" onClick={() => setSidebarOpen(false)}>الوظائف</Link></li>
                             <li className="mt-2 font-bold text-[#2A256D]">اقسام الشركة</li>
-                            <li className="pl-2">قسم 1</li>
-                            <li className="pl-2">قسم 2</li>
-                            <li className="pl-2">قسم 3</li>
-                            <li className="mt-2 font-bold text-[#2A256D]">مشاريعنا</li>
-                            <li className="pl-2">مشروع أ</li>
-                            <li className="pl-2">مشروع ب</li>
-                            <li className="pl-2">مشروع ج</li>
+                            <li className="pl-2"> <Link className={`transition-all duration-200  ${pathname === "/m3mar-tatwir" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""}`} href="/m3mar-tatwir" onClick={() => setSidebarOpen(false)}>معمار للتطوير</Link></li>
+                            <li className="pl-2"> <Link className={`transition-all duration-200  ${pathname === "/m3mar-investment" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""}`} href="/m3mar-investment" onClick={() => setSidebarOpen(false)}>معمار للاستثمار</Link></li>
+                            <li className="pl-2"> <Link className={`transition-all duration-200  ${pathname === "/m3mar-constractor" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""}`} href="/m3mar-constractor" onClick={() => setSidebarOpen(false)}>معمار للمقاولات</Link></li>
+
+                            <li ><Link className={`transition-all duration-200  ${pathname === "/jobs" ? "text-[#383191] border-r-2 border-[#E37C35]" : ""}`} href="/previous-projects" onClick={() => setSidebarOpen(false)}>مشاريعنا</Link></li>
+
                         </ul>
                     </div>
 
@@ -249,13 +247,13 @@ export default function Navbar() {
                         className={`dropdown-menu bg-white flex flex-col rounded shadow-md w-full max-w-xs text-right self-end  ${openDropdown === "sections" ? "open" : ""}`}
                         style={{ direction: "rtl" }}
                     >
-                        <div className=" flex items-center hover:text-[#E37C35] transition-all duration-250 ">  <Link className="px-4 py-2 hover:text-[#E37C35] transition-all duration-250  cursor-pointer" href={""}> معمار للتطوير</Link>
+                        <div className=" flex items-center hover:text-[#E37C35] transition-all duration-250 ">  <Link className="px-4 py-2 hover:text-[#E37C35] transition-all duration-250  cursor-pointer" href={"/m3mar-tatwir"}> معمار للتطوير</Link>
                             <FaArrowLeft className="" size={15} />
                         </div>
-                        <div className=" flex items-center hover:text-[#E37C35] transition-all duration-250 "> <Link className="px-4 py-2  cursor-pointer" href={""}>معمار للاستثمار </Link>
+                        <div className=" flex items-center hover:text-[#E37C35] transition-all duration-250 "> <Link className="px-4 py-2  cursor-pointer" href={"/m3mar-investment"}>معمار للاستثمار </Link>
                             <FaArrowLeft className="" size={15} />
                         </div>
-                        <div className=" flex items-center hover:text-[#E37C35] transition-all duration-250 "> <Link className="px-4 py-2  cursor-pointer" href={""}>معمار للمقاولات</Link>
+                        <div className=" flex items-center hover:text-[#E37C35] transition-all duration-250 "> <Link className="px-4 py-2  cursor-pointer" href={"/m3mar-constractor"}>معمار للمقاولات</Link>
                             <FaArrowLeft className="" size={15} />
                         </div>
 

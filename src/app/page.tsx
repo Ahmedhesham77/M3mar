@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from 'next/link';
 import { useEffect, useState, useRef } from "react";
 import SplashScreen from "../components/SplashScreen";
 import NewProject from "../components/NewProject";
@@ -10,6 +11,9 @@ import CustomerOpinions from "../components/CustomerOpinions";
 import Agents from "../components/Agents";
 import NewsEvents from "../components/NewsEvents";
 import Footer from "../components/Footer";
+import { agents } from "../data/agents";
+import { projectUnits } from "../data/newProjects";
+import { news } from "../data/news";
 
 import { CiSearch } from "react-icons/ci";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -28,20 +32,7 @@ import './globals.css';
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
   const swiperRef = useRef<SwiperCore | null>(null);
-  const projectUnits = [
-    { id: 1, title: "مشروع الاندلس", date: "12 نوفمبر 2025", location: " القاهرة الجديدة" },
-    { id: 2, title: "مشروع النرجس", date: "15 ديسمبر 2025", location: "الجيزة" },
-    { id: 3, title: "مشروع المعادي", date: "1 يناير 2026", location: "المعادي" },
-    { id: 4, title: "مشروع الاندلس", date: "12 نوفمبر 2025", location: "القاهرة" },
-    { id: 5, title: "مشروع النرجس", date: "15 ديسمبر 2025", location: "الجيزة" },
-    { id: 6, title: "مشروع المعادي", date: "1 يناير 2026", location: "المعادي" },
-    { id: 7, title: "مشروع الاندلس", date: "12 نوفمبر 2025", location: "القاهرة" },
-    { id: 8, title: "مشروع النرجس", date: "15 ديسمبر 2025", location: "الجيزة" },
-    { id: 9, title: "مشروع المعادي", date: "1 يناير 2026", location: "المعادي" },
-    { id: 10, title: "مشروع الاندلس", date: "12 نوفمبر 2025", location: "القاهرة" },
-    { id: 11, title: "مشروع النرجس", date: "15 ديسمبر 2025", location: "الجيزة" },
-    { id: 12, title: "مشروع المعادي", date: "1 يناير 2026", location: "المعادي" },
-  ];
+
 
   useEffect(() => {
     // تأخير زمني لمحاكاة التحميل - يمكنك تعديله حسب حاجتك
@@ -96,7 +87,7 @@ export default function HomePage() {
               <button className=" rounded-4xl p-3 border-[#E37C35] border-2 text-[#E37C35] transition-all hover:text-white hover:bg-[#E37C35] duration-300"> تعرف علينا اكثر</button>
             </div>
           </div>
-          <div className="flex flex-col-reverse md:flex-row px-0 gap-2 mt-6 md:px-14">
+          <div className="flex flex-col-reverse md:flex-row px-0 gap-2 mt-6 ">
             <div className="w-full h-64 md:h-96 rounded-lg overflow-hidden">
               <iframe
                 className="w-full h-full"
@@ -285,15 +276,20 @@ export default function HomePage() {
             </SwiperSlide>
           </Swiper>
         </section>
-        <NewProject unitsPerSlide={6} soldUnitIds={[]} directionOfHead="flex-row-reverse" units={projectUnits} button={
-          <button className='px-4 py-3 bg-white border-[#E37C35] border-[1px] text-[#E37C35] w-full text-[12px] md:text-[14px] rounded-2xl hover:bg-[#E37C35] hover:text-white transition duration-200'>
-            شاهد اكثر
-          </button>
-        } />
-
+        {/* New Projects Section */}
+        <section className="py-12 px-4 md:px-8 bg-white">
+          <div className='flex flex-col items-end text-start bg-white rounded-lg'>
+            <h2 className='text-lg sm:text-2xl font-bold mb-4'>احدث مشاريع معمار</h2>
+            <p className='text-gray-600 mb-6 text-end text-[12px] sm:text-md'>
+              تعمل شرکة معمار للتطویر العقاري وإدارة المشروعات ﻋﻠﯽ تقدیم أفضل خدمات المقاولات التشیید والبناء
+            </p>
+          </div>
+          <NewProject unitsPerSlide={6} units={projectUnits} />
+        </section>
+        {/* Customer Opinions Section */}
         <CustomerOpinions />
         { /* job Section */}
-        <section className="w-full  ">
+        <section className="w-full py-8  ">
           <div
             className="flex flex-row-reverse w-full justify-between  items-end mt-2 bg-cover bg-center h-[30vh] sm:h-[35vh] md:h-[40vh] relative"
             style={{ backgroundImage: "url('/jobSectionBg.svg')" }}
@@ -315,8 +311,24 @@ export default function HomePage() {
           </div>
         </section>
 
-        <Agents />
-        <NewsEvents />
+        <Agents agents={agents} unitsPerSlide={3} />
+        <section className="py-12 px-4 md:px-8 bg-white">
+          <div className='flex flex-col  items-baseline justify-between   '>
+            <div className='flex flex-col w-full items-end text-start  bg-white rounded-lg '>
+              <h2 className=' text-lg sm:text-2xl font-bold mb-4'>  أخبار و فعليات</h2>
+              <p className='text-gray-600 mb-6 text-end text-[12px] sm:text-md'>تعمل شرکة معمار للتطویر العقاري وإدارة المشروعات ﻋﻠﯽ تقدیم أفضل خدمات المقاولات التشیید والبناء</p>
+
+            </div>
+            <div className='w-full  flex justify-end mb-4'>
+              <Link href="/news" passHref>
+                <button className='px-4 py-3 bg-white border-[#E37C35] border-[1px] text-[#E37C35] w-full text-[9px] sm:text-[12px] md:text-[14px] rounded-2xl hover:bg-[#E37C35] hover:text-white transition duration-200'>
+                  إطلع علي الاخبار
+                </button>
+              </Link>
+            </div>
+          </div>
+          <NewsEvents news={news} unitsPerSlide={6} />
+        </section>
         <Footer />
 
       </main>

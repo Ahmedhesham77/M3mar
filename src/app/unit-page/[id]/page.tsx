@@ -71,7 +71,7 @@ export default function AboutProject() {
 
                     <div className='bg-white'>
                         <div className='flex flex-col gap-4 justify-end items-end mb-4'>
-                            <div className='flex flex-row-reverse justify-between w-full mb-2 items-center'>
+                            <div className='flex flex-col sm:flex-row-reverse justify-between w-full mb-2 items-center'>
                                 <h1 className='text-[16px] sm:text-[18px] md:text-[20px]  font-bold'>
                                     تفاصيل الوحده وخريطه الوحده                                </h1>
                                 <div className='w-full sm:w-1/3 rounded-3xl bg-[#383191] py-2 px-3 text-white border hover:bg-white hover:text-[#383191] hover:border-[#383191] duration-300 flex flex-row-reverse justify-center gap-2 items-baseline  '>
